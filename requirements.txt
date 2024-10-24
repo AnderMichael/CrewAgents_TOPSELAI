@@ -1,0 +1,3 @@
+crewai[tools]
+openai
+python-dotenv
