@@ -60,15 +60,15 @@ summarize_chapter5_task = Task(
 create_analysis_md_task = Task(
     description=(
         "Using the summary of chapter 5 'Matemáticas', create a detailed analysis.md file "
-        "with explanations of code implementation plans for a FastAPI app integrated with SciPy."
+        "with explanations of code implementation plans for a FastAPI app integrated with SciPy, use the docs."
     ),
     expected_output=(
         "A well-structured 'analysis.md' file containing detailed plans and explanations for implementing "
-        "the functions from chapter 5 in a FastAPI app using SciPy."
+        "the functions from chapter 5 in a FastAPI app using SciPy. Detail imports at header, functions at body (with descriptions) and main run at the end."
     ),
     agent=analyzer_agent,
     output_file="analysis.md",
-    tools=[FileReadTool(file_path=os.path.join(current_dir, "summary.md")), FileWriterTool(file_path=os.path.join(current_dir, "analysis.md"))],  # Assuming FileWriteTool exists
+    tools=[FileReadTool(file_path=os.path.join(current_dir, "summary.md")), FileWriterTool(file_path=os.path.join(current_dir, "analysis.md")), fastapi_tool, scipy_tool],  # Assuming FileWriteTool exists
 )
 
 # Task 3: Generate the FastAPI app

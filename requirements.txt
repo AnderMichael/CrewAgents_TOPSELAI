@@ -1,3 +1,5 @@
 crewai[tools]
 openai
 python-dotenv
+python-multipart
+fastapi[standard]
